@@ -7,7 +7,7 @@ surface: agent
 model: claude-opus-4-6
 feature: 001-ai-code-detection
 branch: 001-ai-code-detection
-user: TechTiesIbrahim
+user: Dilawar Gopang
 command: research
 labels: ["research", "entropy", "n-gram", "structural-heuristics", "model-fingerprints", "confidence-calibration", "segmentation", "ast-parsing", "cli-framework"]
 links:

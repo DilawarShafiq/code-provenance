@@ -7,7 +7,7 @@ surface: agent
 model: claude-opus-4-6
 feature: 001-ai-code-detection
 branch: 001-ai-code-detection
-user: TechTiesIbrahim
+user: Dilawar Gopang
 command: /sp.specify
 labels: ["ai-detection", "spec", "mvp", "cli", "heuristics"]
 links:
