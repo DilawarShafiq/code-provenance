@@ -1,0 +1,21 @@
+{
+  "name": "code-provenance",
+  "version": "0.1.0",
+  "description": "Code fingerprinting engine. Detect AI-generated code, find stolen code, catch license violations, trace code lineage.",
+  "main": "dist/index.js",
+  "bin": {
+    "code-provenance": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/cli.ts",
+    "test": "vitest",
+    "lint": "eslint src/"
+  },
+  "keywords": ["code-analysis", "ai-detection", "license", "provenance", "fingerprinting", "plagiarism", "open-source", "forensics"],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
