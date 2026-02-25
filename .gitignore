@@ -1,12 +1,45 @@
-node_modules/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
 dist/
-.env
-*.log
-.DS_Store
-coverage/
-NUL
-*.tmp
-*.swp
+build/
+.eggs/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage/
+.mypy_cache/
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
 Thumbs.db
+NUL
+
+# Logs
+*.log
+*.tmp
+
+# Node (legacy)
+node_modules/

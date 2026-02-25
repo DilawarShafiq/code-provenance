@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "code-provenance"
+version = "0.1.0"
+description = "Code fingerprinting engine. Detect AI-generated code, find stolen code, catch license violations, trace code lineage."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+authors = [
+    {name = "Dilawar Shafiq", email = "dilawar.gopang@gmail.com"},
+]
+keywords = [
+    "code-analysis",
+    "ai-detection",
+    "license",
+    "provenance",
+    "fingerprinting",
+    "plagiarism",
+    "open-source",
+    "forensics",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+    "Typing :: Typed",
+]
+dependencies = [
+    "click>=8.1.0",
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+code-provenance = "code_provenance.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/DilawarShafiq/code-provenance"
+Repository = "https://github.com/DilawarShafiq/code-provenance"
+Issues = "https://github.com/DilawarShafiq/code-provenance/issues"
+
+[tool.setuptools.packages.find]
+include = ["code_provenance*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
