@@ -1,6 +1,7 @@
 {
   "name": "code-provenance",
   "version": "0.1.0",
+  "type": "module",
   "description": "Code fingerprinting engine. Detect AI-generated code, find stolen code, catch license violations, trace code lineage.",
   "main": "dist/index.js",
   "bin": {
@@ -8,14 +9,36 @@
   },
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node src/cli.ts",
-    "test": "vitest",
-    "lint": "eslint src/"
+    "dev": "node --loader ts-node/esm src/cli.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "bench": "vitest bench",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit"
   },
-  "keywords": ["code-analysis", "ai-detection", "license", "provenance", "fingerprinting", "plagiarism", "open-source", "forensics"],
+  "keywords": [
+    "code-analysis",
+    "ai-detection",
+    "license",
+    "provenance",
+    "fingerprinting",
+    "plagiarism",
+    "open-source",
+    "forensics"
+  ],
   "author": "Muhammad Dilawar Shafiq (Dilawar Gopang) <dilawar.gopang@gmail.com> (https://github.com/DilawarShafiq)",
   "license": "MIT",
   "engines": {
     "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "commander": "^14.0.3",
+    "kleur": "^4.1.5",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "vitest": "^4.0.18"
   }
 }

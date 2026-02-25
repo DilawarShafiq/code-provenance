@@ -1,0 +1,34 @@
+{
+  "file": "mixed-auth.ts",
+  "totalLines": 220,
+  "groundTruth": [
+    {
+      "startLine": 1,
+      "endLine": 45,
+      "classification": "ai-generated",
+      "model": "claude",
+      "description": "Functional style, const-heavy, verbose type annotations, thorough JSDoc"
+    },
+    {
+      "startLine": 46,
+      "endLine": 120,
+      "classification": "human-written",
+      "model": null,
+      "description": "Irregular formatting, shortcuts, domain knowledge (k8s clock skew), performance comments, HACK/FIXME markers"
+    },
+    {
+      "startLine": 121,
+      "endLine": 180,
+      "classification": "ai-generated",
+      "model": "gpt",
+      "description": "Verbose pre-function comments, step-by-step inline comments, generic naming (request/response/config)"
+    },
+    {
+      "startLine": 181,
+      "endLine": 220,
+      "classification": "human-written",
+      "model": null,
+      "description": "Terse style, domain jargon (RBAC, perms), minimal comments, personal abbreviations"
+    }
+  ]
+}

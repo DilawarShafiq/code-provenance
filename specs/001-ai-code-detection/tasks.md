@@ -19,13 +19,13 @@
 
 **Purpose**: Project initialization, dependencies, build configuration
 
-- [ ] T001 Initialize TypeScript project with tsconfig.json (strict: true, ESM, target ES2022, moduleResolution bundler, outDir dist/)
-- [ ] T002 Install production dependencies: commander@14, kleur@4, typescript@5 — run `npm install commander kleur typescript`
-- [ ] T003 Install dev dependencies: vitest, @types/node — run `npm install -D vitest @types/node`
-- [ ] T004 [P] Update package.json scripts: build (tsc), dev (node --loader ts-node/esm src/cli.ts), test (vitest run), test:watch (vitest), test:coverage (vitest --coverage), bench (vitest bench), typecheck (tsc --noEmit), lint (tsc --noEmit)
-- [ ] T005 [P] Create vitest.config.ts with globals: true, include tests/**/*.test.ts, benchmark include tests/benchmarks/**/*.bench.ts
-- [ ] T006 [P] Create src/types.ts with all core type definitions from data-model.md: Classification, ConfidenceLevel, DetectionSignal, LineRange, ModelAttribution, ScanResult, ScanSummary, FileMetadata, AnalysisMetadata, ParsedCode, FunctionInfo, ImportInfo, CommentInfo, IdentifierInfo, Detector interface, Parser interface, ReportFormatter interface
-- [ ] T007 Create project directory structure per plan.md: src/core/, src/detectors/, src/parsers/, src/reports/, src/data/, tests/unit/detectors/, tests/unit/core/, tests/unit/parsers/, tests/unit/reports/, tests/integration/, tests/fixtures/ai-generated/, tests/fixtures/human-written/, tests/fixtures/mixed/, tests/benchmarks/
+- [X] T001 Initialize TypeScript project with tsconfig.json (strict: true, ESM, target ES2022, moduleResolution bundler, outDir dist/)
+- [X] T002 Install production dependencies: commander@14, kleur@4, typescript@5 — run `npm install commander kleur typescript`
+- [X] T003 Install dev dependencies: vitest, @types/node — run `npm install -D vitest @types/node`
+- [X] T004 [P] Update package.json scripts: build (tsc), dev (node --loader ts-node/esm src/cli.ts), test (vitest run), test:watch (vitest), test:coverage (vitest --coverage), bench (vitest bench), typecheck (tsc --noEmit), lint (tsc --noEmit)
+- [X] T005 [P] Create vitest.config.ts with globals: true, include tests/**/*.test.ts, benchmark include tests/benchmarks/**/*.bench.ts
+- [X] T006 [P] Create src/types.ts with all core type definitions from data-model.md: Classification, ConfidenceLevel, DetectionSignal, LineRange, ModelAttribution, ScanResult, ScanSummary, FileMetadata, AnalysisMetadata, ParsedCode, FunctionInfo, ImportInfo, CommentInfo, IdentifierInfo, Detector interface, Parser interface, ReportFormatter interface
+- [X] T007 Create project directory structure per plan.md: src/core/, src/detectors/, src/parsers/, src/reports/, src/data/, tests/unit/detectors/, tests/unit/core/, tests/unit/parsers/, tests/unit/reports/, tests/integration/, tests/fixtures/ai-generated/, tests/fixtures/human-written/, tests/fixtures/mixed/, tests/benchmarks/
 
 **Checkpoint**: TypeScript project compiles, tests run (empty), types defined
 
@@ -37,16 +37,16 @@
 
 **CRITICAL**: No user story work can begin until parsers and detector framework are complete
 
-- [ ] T008 Implement Parser interface contract in src/parsers/parser.ts — export the Parser interface and parser resolution function selectParser(filePath: string): Parser
-- [ ] T009 Implement TypeScript parser in src/parsers/typescript-parser.ts — use ts.createSourceFile() (NOT createProgram) to extract FunctionInfo[], ImportInfo[], CommentInfo[], IdentifierInfo[] from TypeScript/JavaScript files (.ts, .tsx, .js, .jsx)
-- [ ] T010 Implement generic fallback parser in src/parsers/generic-parser.ts — regex-based line tokenizer that extracts comments (// and /* */), identifiers, and basic function boundaries for any text file
-- [ ] T011 [P] Implement Detector interface contract in src/detectors/detector.ts — export Detector interface with detect(code: ParsedCode): DetectionSignal[]
-- [ ] T012 [P] Create test fixture: tests/fixtures/ai-generated/claude-auth.ts — a TypeScript auth module written in Claude style (functional, const-heavy, import type, verbose type annotations, thorough error handling)
-- [ ] T013 [P] Create test fixture: tests/fixtures/ai-generated/gpt-utils.ts — a TypeScript utility module written in GPT style (verbose comments before every function, // This function does X, step-by-step comments, generic naming)
-- [ ] T014 [P] Create test fixture: tests/fixtures/ai-generated/copilot-helpers.ts — a TypeScript helper module in Copilot style (short completions 5-15 lines, no surrounding comments, context mimicry)
-- [ ] T015 [P] Create test fixture: tests/fixtures/human-written/irregular-style.ts — human-written TypeScript with inconsistent formatting, domain-specific naming, variable comment density, irregular function lengths
-- [ ] T016 [P] Create test fixture: tests/fixtures/human-written/domain-specific.ts — human-written TypeScript with strong personal style, domain jargon in identifiers, minimal comments, varied patterns
-- [ ] T017 [P] Create test fixture: tests/fixtures/mixed/mixed-auth.ts — TypeScript file with lines 1-45 AI-generated (Claude), lines 46-120 human-written, lines 121-180 AI-generated (GPT), lines 181-220 human-written. Add companion tests/fixtures/mixed/mixed-auth.meta.json with ground truth labels
+- [X] T008 Implement Parser interface contract in src/parsers/parser.ts — export the Parser interface and parser resolution function selectParser(filePath: string): Parser
+- [X] T009 Implement TypeScript parser in src/parsers/typescript-parser.ts — use ts.createSourceFile() (NOT createProgram) to extract FunctionInfo[], ImportInfo[], CommentInfo[], IdentifierInfo[] from TypeScript/JavaScript files (.ts, .tsx, .js, .jsx)
+- [X] T010 Implement generic fallback parser in src/parsers/generic-parser.ts — regex-based line tokenizer that extracts comments (// and /* */), identifiers, and basic function boundaries for any text file
+- [X] T011 [P] Implement Detector interface contract in src/detectors/detector.ts — export Detector interface with detect(code: ParsedCode): DetectionSignal[]
+- [X] T012 [P] Create test fixture: tests/fixtures/ai-generated/claude-auth.ts — a TypeScript auth module written in Claude style (functional, const-heavy, import type, verbose type annotations, thorough error handling)
+- [X] T013 [P] Create test fixture: tests/fixtures/ai-generated/gpt-utils.ts — a TypeScript utility module written in GPT style (verbose comments before every function, // This function does X, step-by-step comments, generic naming)
+- [X] T014 [P] Create test fixture: tests/fixtures/ai-generated/copilot-helpers.ts — a TypeScript helper module in Copilot style (short completions 5-15 lines, no surrounding comments, context mimicry)
+- [X] T015 [P] Create test fixture: tests/fixtures/human-written/irregular-style.ts — human-written TypeScript with inconsistent formatting, domain-specific naming, variable comment density, irregular function lengths
+- [X] T016 [P] Create test fixture: tests/fixtures/human-written/domain-specific.ts — human-written TypeScript with strong personal style, domain jargon in identifiers, minimal comments, varied patterns
+- [X] T017 [P] Create test fixture: tests/fixtures/mixed/mixed-auth.ts — TypeScript file with lines 1-45 AI-generated (Claude), lines 46-120 human-written, lines 121-180 AI-generated (GPT), lines 181-220 human-written. Add companion tests/fixtures/mixed/mixed-auth.meta.json with ground truth labels
 - [ ] T018 Write unit tests for TypeScript parser in tests/unit/parsers/typescript-parser.test.ts — test extraction of functions, imports, comments, identifiers from fixture files. Verify parse completes in < 50ms for 10k-line fixture
 - [ ] T019 [P] Write unit tests for generic parser in tests/unit/parsers/generic-parser.test.ts — test comment extraction, identifier extraction, function boundary detection on Python-style and plain-text fixtures
 
@@ -69,18 +69,19 @@
 - [ ] T024 [P] [US1] Write unit tests for confidence calibration in tests/unit/core/confidence.test.ts — test weighted signal aggregation, sigmoid mapping (raw 0.3 → ~12%, raw 0.5 → 50%, raw 0.7 → ~88%), unknown band classification
 - [ ] T025 [P] [US1] Write unit tests for segmenter in tests/unit/core/segmenter.test.ts — test 20-line window with 10-line stride, change-point detection, merge pass, minimum 5-line segment rule
 
+
 ### Implementation for User Story 1
 
-- [ ] T026 [P] [US1] Implement entropy detector in src/detectors/entropy.ts — Shannon entropy on character frequencies per 20-line window. Thresholds: < 4.0 strong AI signal, 4.0-4.5 weak signal, > 4.5 human signal. Return DetectionSignal[] with strength 0-1
-- [ ] T027 [P] [US1] Implement comment-patterns detector in src/detectors/comment-patterns.ts — compute comment-to-code ratio, detect pre-function comment patterns, JSDoc density. AI signal: ratio > 0.30, pre-function comments on > 60% of functions
-- [ ] T028 [P] [US1] Implement naming-patterns detector in src/detectors/naming-patterns.ts — count generic identifiers (data, result, response, value, item, element, temp, info, output, input, config, options, params, args, handler, callback, error, err) vs domain-specific. AI signal: generic ratio > 0.25
-- [ ] T029 [P] [US1] Implement structural detector in src/detectors/structural.ts — analyze import alphabetical sort % (AI > 90%), function length coefficient of variation (AI < 0.3), try/catch wrapping ratio (AI > 70% of async functions)
-- [ ] T030 [US1] Implement segmenter in src/core/segmenter.ts — sliding window (20 lines, 10-line stride), classify each window by aggregating detector signals, detect change points between adjacent windows, merge same-classification runs, discard ranges < 5 lines
-- [ ] T031 [US1] Implement confidence calibration in src/core/confidence.ts — weighted signal aggregation (entropy: 0.25, ngram: 0.20, comments: 0.15, naming: 0.15, structural: 0.15, model-sigs: 0.10), sigmoid mapping with k=10 midpoint=0.5, classify: >60% → ai-generated, <40% → human-written, 40-60% → unknown
-- [ ] T032 [US1] Implement analyzer orchestrator in src/core/analyzer.ts — accept file path, select parser, run all registered detectors, pass signals to segmenter, calibrate confidence per range, assemble ScanResult with FileMetadata, LineRange[], ScanSummary, AnalysisMetadata
-- [ ] T033 [US1] Implement terminal report formatter in src/reports/terminal-report.ts — kleur-based colored output matching the CLI contract: header with version, file info with line count, line ranges with icons (AI/human/unknown), confidence %, summary line, overall confidence level. Respect NO_COLOR env
-- [ ] T034 [US1] Implement CLI entry point in src/cli.ts — Commander.js program with `scan <file>` command, --no-color flag, version from package.json. Wire: parse args → read file → analyzer.analyze() → terminal report → stdout. Exit codes: 0 (no AI), 1 (AI detected), 2 (error). Handle file-not-found, binary detection, empty file, read permission errors
-- [ ] T035 [US1] Write integration test in tests/integration/scan-pipeline.test.ts — end-to-end: scan claude-auth.ts fixture → verify all ranges classified AI with > 75% confidence. Scan human irregular-style.ts → verify all ranges classified human. Scan mixed-auth.ts → verify correct transitions at labeled boundaries
+- [X] T026 [P] [US1] Implement entropy detector in src/detectors/entropy.ts — Shannon entropy on character frequencies per 20-line window. Thresholds: < 4.0 strong AI signal, 4.0-4.5 weak signal, > 4.5 human signal. Return DetectionSignal[] with strength 0-1
+- [X] T027 [P] [US1] Implement comment-patterns detector in src/detectors/comment-patterns.ts — compute comment-to-code ratio, detect pre-function comment patterns, JSDoc density. AI signal: ratio > 0.30, pre-function comments on > 60% of functions
+- [X] T028 [P] [US1] Implement naming-patterns detector in src/detectors/naming-patterns.ts — count generic identifiers (data, result, response, value, item, element, temp, info, output, input, config, options, params, args, handler, callback, error, err) vs domain-specific. AI signal: generic ratio > 0.25
+- [X] T029 [P] [US1] Implement structural detector in src/detectors/structural.ts — analyze import alphabetical sort % (AI > 90%), function length coefficient of variation (AI < 0.3), try/catch wrapping ratio (AI > 70% of async functions)
+- [X] T030 [US1] Implement segmenter in src/core/segmenter.ts — sliding window (20 lines, 10-line stride), classify each window by aggregating detector signals, detect change points between adjacent windows, merge same-classification runs, discard ranges < 5 lines
+- [X] T031 [US1] Implement confidence calibration in src/core/confidence.ts — weighted signal aggregation (entropy: 0.25, ngram: 0.20, comments: 0.15, naming: 0.15, structural: 0.15, model-sigs: 0.10), sigmoid mapping with k=10 midpoint=0.5, classify: >60% → ai-generated, <40% → human-written, 40-60% → unknown
+- [X] T032 [US1] Implement analyzer orchestrator in src/core/analyzer.ts — accept file path, select parser, run all registered detectors, pass signals to segmenter, calibrate confidence per range, assemble ScanResult with FileMetadata, LineRange[], ScanSummary, AnalysisMetadata
+- [X] T033 [US1] Implement terminal report formatter in src/reports/terminal-report.ts — kleur-based colored output matching the CLI contract: header with version, file info with line count, line ranges with icons (AI/human/unknown), confidence %, summary line, overall confidence level. Respect NO_COLOR env
+- [X] T034 [US1] Implement CLI entry point in src/cli.ts — Commander.js program with `scan <file>` command, --no-color flag, version from package.json. Wire: parse args → read file → analyzer.analyze() → terminal report → stdout. Exit codes: 0 (no AI), 1 (AI detected), 2 (error). Handle file-not-found, binary detection, empty file, read permission errors
+- [X] T035 [US1] Write integration test in tests/integration/scan-pipeline.test.ts — end-to-end: scan claude-auth.ts fixture → verify all ranges classified AI with > 75% confidence. Scan human irregular-style.ts → verify all ranges classified human. Scan mixed-auth.ts → verify correct transitions at labeled boundaries
 - [ ] T036 [US1] Write performance benchmark in tests/benchmarks/scan-performance.bench.ts — verify single-file scan of 220-line fixture completes in < 200ms. Generate a synthetic 10k-line fixture and verify scan completes in < 200ms
 
 **Checkpoint**: `code-provenance scan ./file.ts` works end-to-end. Line ranges classified with confidence. Terminal output is beautiful and readable. All US1 tests pass.
@@ -97,11 +98,12 @@
 
 - [ ] T037 [P] [US2] Write unit tests for JSON report formatter in tests/unit/reports/json-report.test.ts — verify output is valid JSON, contains all required fields (file, ranges, summary, metadata), verify deterministic (same input → byte-identical output)
 
+
 ### Implementation for User Story 2
 
-- [ ] T038 [US2] Implement JSON report formatter in src/reports/json-report.ts — serialize ScanResult to JSON matching the contract schema. Include all fields: file metadata, ranges with signals, summary with percentages, metadata with algorithm versions and thresholds. Deterministic key ordering
-- [ ] T039 [US2] Wire --json and --format flags in src/cli.ts — add --json (-j) shortcut and --format (-f) option accepting "terminal" | "json" | "markdown". Select formatter based on flag. JSON errors go to stderr as JSON objects with error:true
-- [ ] T040 [US2] Write integration test for JSON output in tests/integration/scan-pipeline.test.ts — scan fixture with --json, JSON.parse the output, validate all required fields present, verify exit code 0 for clean file, exit code 1 for AI-detected file, exit code 2 for invalid path
+- [X] T038 [US2] Implement JSON report formatter in src/reports/json-report.ts — serialize ScanResult to JSON matching the contract schema. Include all fields: file metadata, ranges with signals, summary with percentages, metadata with algorithm versions and thresholds. Deterministic key ordering
+- [X] T039 [US2] Wire --json and --format flags in src/cli.ts — add --json (-j) shortcut and --format (-f) option accepting "terminal" | "json" | "markdown". Select formatter based on flag. JSON errors go to stderr as JSON objects with error:true
+- [X] T040 [US2] Write integration test for JSON output in tests/integration/scan-pipeline.test.ts — scan fixture with --json, JSON.parse the output, validate all required fields present, verify exit code 0 for clean file, exit code 1 for AI-detected file, exit code 2 for invalid path
 
 **Checkpoint**: `code-provenance scan file.ts --json` produces valid, parseable JSON. Exit codes work. CI/CD integration ready.
 
@@ -119,11 +121,11 @@
 
 ### Implementation for User Story 3
 
-- [ ] T042 [US3] Create model signature data in src/data/model-signatures.json — define pattern rules for Claude (const ratio > 85%, import type usage, .map/.filter/.reduce preference, minimal mutation), GPT (pre-function comment ratio > 60%, "This function" pattern, step-by-step comments, extensive JSDoc), Copilot (avg function length 5-15 lines, no surrounding comments, context-mimicking names)
-- [ ] T043 [US3] Implement model-signatures detector in src/detectors/model-signatures.ts — load signatures from JSON, score each model against parsed code features, return ModelAttribution with model name, confidence, matched patterns. Attribution threshold: top model score > 0.6 with gap > 0.2 to second = attributed; otherwise "unknown"
-- [ ] T044 [US3] Wire model attribution into analyzer in src/core/analyzer.ts — add model-signatures detector to detector registry, include ModelAttribution in LineRange when classification is ai-generated
-- [ ] T045 [US3] Update terminal report to show model attribution in src/reports/terminal-report.ts — display model name after confidence % for AI-generated ranges (e.g., "Claude-style patterns", "GPT-style patterns")
-- [ ] T046 [US3] Write integration test for model attribution in tests/integration/scan-pipeline.test.ts — scan claude-auth.ts → verify "claude" attribution. Scan gpt-utils.ts → verify "gpt" attribution. Scan copilot-helpers.ts → verify "copilot" attribution
+- [X] T042 [US3] Create model signature data in src/data/model-signatures.json — define pattern rules for Claude (const ratio > 85%, import type usage, .map/.filter/.reduce preference, minimal mutation), GPT (pre-function comment ratio > 60%, "This function" pattern, step-by-step comments, extensive JSDoc), Copilot (avg function length 5-15 lines, no surrounding comments, context-mimicking names)
+- [X] T043 [US3] Implement model-signatures detector in src/detectors/model-signatures.ts — load signatures from JSON, score each model against parsed code features, return ModelAttribution with model name, confidence, matched patterns. Attribution threshold: top model score > 0.6 with gap > 0.2 to second = attributed; otherwise "unknown"
+- [X] T044 [US3] Wire model attribution into analyzer in src/core/analyzer.ts — add model-signatures detector to detector registry, include ModelAttribution in LineRange when classification is ai-generated
+- [X] T045 [US3] Update terminal report to show model attribution in src/reports/terminal-report.ts — display model name after confidence % for AI-generated ranges (e.g., "Claude-style patterns", "GPT-style patterns")
+- [X] T046 [US3] Write integration test for model attribution in tests/integration/scan-pipeline.test.ts — scan claude-auth.ts → verify "claude" attribution. Scan gpt-utils.ts → verify "gpt" attribution. Scan copilot-helpers.ts → verify "copilot" attribution
 
 **Checkpoint**: Model attribution works. Claude/GPT/Copilot detected in respective fixtures. Terminal and JSON outputs show model info.
 
@@ -137,15 +139,15 @@
 
 ### Tests for User Story 4
 
-- [ ] T047 [P] [US4] Create test fixture: tests/fixtures/ai-generated/gpt-utils.py — Python utility module in GPT style (verbose docstrings, generic naming)
-- [ ] T048 [P] [US4] Create test fixture: tests/fixtures/human-written/domain-logic.py — Human-written Python with domain-specific naming, irregular style
-- [ ] T049 [P] [US4] Write integration test for generic parser in tests/integration/scan-pipeline.test.ts — scan Python fixtures, verify classifications produced, verify "generic" parser noted in output
+- [X] T047 [P] [US4] Create test fixture: tests/fixtures/ai-generated/gpt-utils.py — Python utility module in GPT style (verbose docstrings, generic naming)
+- [X] T048 [P] [US4] Create test fixture: tests/fixtures/human-written/domain-logic.py — Human-written Python with domain-specific naming, irregular style
+- [X] T049 [P] [US4] Write integration test for generic parser in tests/integration/scan-pipeline.test.ts — scan Python fixtures, verify classifications produced, verify "generic" parser noted in output
 
 ### Implementation for User Story 4
 
-- [ ] T050 [US4] Enhance parser selection in src/parsers/parser.ts — detect language from file extension (.ts/.tsx/.js/.jsx → typescript, others → generic), add binary file detection (read first 8KB, check for null bytes), return error for binary files
-- [ ] T051 [US4] Add language indication to terminal report in src/reports/terminal-report.ts — show "(generic parser)" note when dedicated parser not available, indicate reduced confidence
-- [ ] T052 [US4] Verify generic parser works end-to-end by running integration tests against Python fixtures
+- [X] T050 [US4] Enhance parser selection in src/parsers/parser.ts — detect language from file extension (.ts/.tsx/.js/.jsx → typescript, others → generic), add binary file detection (read first 8KB, check for null bytes), return error for binary files
+- [X] T051 [US4] Add language indication to terminal report in src/reports/terminal-report.ts — show "(generic parser)" note when dedicated parser not available, indicate reduced confidence
+- [X] T052 [US4] Verify generic parser works end-to-end by running integration tests against Python fixtures
 
 **Checkpoint**: Any text file can be scanned. Generic parser provides classifications. Binary files rejected gracefully.
 
@@ -163,9 +165,9 @@
 
 ### Implementation for User Story 5
 
-- [ ] T054 [US5] Implement markdown report formatter in src/reports/markdown-report.ts — generate report matching contracts/cli-contract.md markdown schema: header with file/date/version, summary table, findings per range with classification/confidence/model/evidence, methodology section with algorithm versions and thresholds
-- [ ] T055 [US5] Wire --format markdown in src/cli.ts — ensure markdown formatter selected when --format markdown passed
-- [ ] T056 [US5] Write integration test for markdown output — scan fixture with --format markdown, verify all required sections present, verify deterministic (two runs produce identical output)
+- [X] T054 [US5] Implement markdown report formatter in src/reports/markdown-report.ts — generate report matching contracts/cli-contract.md markdown schema: header with file/date/version, summary table, findings per range with classification/confidence/model/evidence, methodology section with algorithm versions and thresholds
+- [X] T055 [US5] Wire --format markdown in src/cli.ts — ensure markdown formatter selected when --format markdown passed
+- [X] T056 [US5] Write integration test for markdown output — scan fixture with --format markdown, verify all required sections present, verify deterministic (two runs produce identical output)
 
 **Checkpoint**: Markdown reports are audit-ready. All three output formats (terminal, JSON, markdown) work.
 
@@ -180,10 +182,10 @@
 - [ ] T059 [P] Write unit tests for n-gram detector in tests/unit/detectors/ngram.test.ts — test trigram extraction, KL divergence calculation, scoring against baselines
 - [ ] T060 Register n-gram detector in src/core/analyzer.ts — add to detector registry, verify weights still sum correctly with ngram at 0.20
 - [ ] T061 [P] Add README.md update at project root — update with actual CLI usage matching implemented commands, installation instructions, output examples from real scans
-- [ ] T062 Run full test suite and verify all tests pass, coverage > 90% on src/core/ and src/detectors/
+- [X] T062 Run full test suite and verify all tests pass, coverage > 90% on src/core/ and src/detectors/
 - [ ] T063 Run performance benchmarks and verify: single-file < 200ms, 10k-line file < 200ms
-- [ ] T064 Validate determinism: run scan twice on same file, diff JSON outputs, verify byte-identical
-- [ ] T065 Validate no network calls: run scan with network disabled, verify success
+- [X] T064 Validate determinism: run scan twice on same file, diff JSON outputs, verify byte-identical
+- [X] T065 Validate no network calls: run scan with network disabled, verify success
 - [ ] T066 Run quickstart.md validation: follow every step in quickstart.md on a clean checkout, verify all commands work
 
 ---
