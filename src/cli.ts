@@ -58,8 +58,7 @@ program
       process.stdout.write(output + '\n');
 
       // Exit code: 0 = no AI, 1 = AI detected, 2 = error
-      const exitCode = result.summary.aiPercentage > 0 ? 1 : 0;
-      process.exit(exitCode);
+      process.exitCode = result.summary.aiPercentage > 0 ? 1 : 0;
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
 
@@ -69,7 +68,7 @@ program
         process.stderr.write(`Error: ${message}\n`);
       }
 
-      process.exit(2);
+      process.exitCode = 2;
     }
   });
 
