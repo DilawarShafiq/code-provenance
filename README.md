@@ -167,7 +167,7 @@ The TypeScript parser uses the real TypeScript compiler API for accurate functio
 
 ## Zero False Positives Philosophy
 
-From our [constitution](.specify/memory/constitution.md):
+From our design principles:
 
 > *"Better to report 'unknown' than to falsely accuse human code of being AI-generated."*
 

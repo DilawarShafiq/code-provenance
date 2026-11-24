@@ -43,3 +43,12 @@ NUL
 
 # Node (legacy)
 node_modules/
+# Local build notes, specs and AI settings (not part of the public product)
+.claude/
+.specify/
+specs/
+history/
+CLAUDE.md
+PROGRESS.md
+ROADMAP.md
+demo/
